@@ -9,4 +9,6 @@ module.exports.loop = function () {
         }
     }
 
-}
+};
+
+module.exports = roleHarvester;
