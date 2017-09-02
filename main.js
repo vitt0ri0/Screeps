@@ -8,6 +8,9 @@ module.exports.loop = function () {
         if (creep.memory.role == 'harvester') {
             roleHarvester.run(creep);
         }
+        if (creep.memory.role == 'upgrader') {
+            roleUpgrader.run(creep);
+        }
     }
     // var maxHarvesters = 8;
     // // var currentNumHarvesters = _.sum(Game.creeps, (c) = > c.memory.role == 'harvester');
