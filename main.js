@@ -9,7 +9,7 @@ module.exports.loop = function () {
         }
     }
     var maxHarvesters = 8;
-    var currentNumHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
+    var currentNumHarvesters = _.sum(Game.creeps, (c) = > c.memory.role == 'harvester');
 
     console.log(currentNumHarvesters);
     var name = undefined;
@@ -26,4 +26,3 @@ module.exports.loop = function () {
 
 };
 
-module.exports = roleHarvester;
