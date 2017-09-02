@@ -9,9 +9,10 @@ module.exports.loop = function () {
         }
     }
     var maxHarvesters = 8;
-    var currentNumHarvesters = _.sum(Game.creeps, (c) = > c.memory.role == 'harvester');
-
+    // var currentNumHarvesters = _.sum(Game.creeps, (c) = > c.memory.role == 'harvester');
+    var currentNumHarvesters = Game.creeps.length;
     console.log(currentNumHarvesters);
+
     var name = undefined;
     if (currentNumHarvesters < maxHarvesters) {
         name = Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {
