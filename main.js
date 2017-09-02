@@ -2,7 +2,14 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 
 module.exports.loop = function () {
-    // Your code goes here
+    //clear memory
+    for (var name in Memory.creeps) {
+        if (Game.creeps[name] == undefined) {
+            delete Memory.creeps[name];
+        }
+    }
+
+    // do some work
     for (var name in Game.creeps) {
         var creep = Game.creeps[name];
         if (creep.memory.role == 'harvester') {
