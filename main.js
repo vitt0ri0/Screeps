@@ -8,6 +8,21 @@ module.exports.loop = function () {
             roleHarvester.run(creep);
         }
     }
+    var maxHarvesters = 8;
+    var currentNumHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
+
+    console.log(currentNumHarvesters);
+    var name = undefined;
+    if (currentNumHarvesters < maxHarvesters) {
+        name = Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {
+            role: 'harvester',
+            working: false
+        });
+    }
+
+    if (!(name < 0)) {
+        console.log("! new creep: " + name);
+    }
 
 };
 
