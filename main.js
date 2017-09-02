@@ -1,7 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 
-var maxWorkers = 8;
+var maxWorkers = 5;
 
 module.exports.loop = function () {
     //clear memory
