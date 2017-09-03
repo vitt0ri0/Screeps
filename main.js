@@ -26,6 +26,8 @@ module.exports.loop = function () {
             numUpgraders += 1;
         }
     }
+    console.log(numHarvesters);
+    console.log(numUpgraders);
 
     // spawn new creeps
     if (numHarvesters < numUpgraders) {
