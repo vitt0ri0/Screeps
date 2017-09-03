@@ -32,8 +32,11 @@ module.exports.loop = function () {
         if (numHarvesters < maxHarversters) {
             Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'harvester'});
         }
-    } else if (numUpgraders < maxUpgraders) {
-        Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE, MOVE], undefined, {role: 'upgrader'});
+    }
+    if (numUpgraders <= numHarvesters) {
+        if (numUpgraders < maxUpgraders) {
+            Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE, MOVE], undefined, {role: 'upgrader'});
+        }
     }
 
 
@@ -53,6 +56,5 @@ module.exports.loop = function () {
 //     console.log("! new creep: " + name);
 // }
 
-}
-;
+};
 
