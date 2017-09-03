@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bd61d24-4e73-4171-a176-05160d729a62" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/role.builder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ScreepsAutocomplete-master/getSource.js" afterPath="$PROJECT_DIR$/ScreepsAutocomplete-master/getSource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.builder.js" afterPath="$PROJECT_DIR$/role.builder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.harvester.js" afterPath="$PROJECT_DIR$/role.harvester.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.upgrader.js" afterPath="$PROJECT_DIR$/role.upgrader.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
@@ -31,18 +31,8 @@
       <file leaf-file-name="role.builder.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/role.builder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getSource.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScreepsAutocomplete-master/getSource.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -51,18 +41,18 @@
       <file leaf-file-name="role.upgrader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/role.upgrader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="31" />
+            <state relative-caret-position="301">
+              <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="role.harvester.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="role.harvester.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/role.harvester.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="11" selection-end-column="13" />
+              <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -84,12 +74,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ScreepsAutocomplete-master/role.upgrader.js" />
-        <option value="$PROJECT_DIR$/role.harvester.js" />
-        <option value="$PROJECT_DIR$/role.upgrader.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/ScreepsAutocomplete-master/role.builder.js" />
-        <option value="$PROJECT_DIR$/role.builder.js" />
         <option value="$PROJECT_DIR$/ScreepsAutocomplete-master/getSource.js" />
+        <option value="$PROJECT_DIR$/role.builder.js" />
+        <option value="$PROJECT_DIR$/role.upgrader.js" />
+        <option value="$PROJECT_DIR$/role.harvester.js" />
       </list>
     </option>
   </component>
@@ -172,12 +162,12 @@
       <updated>1504303376559</updated>
       <workItem from="1504303379649" duration="5137000" />
       <workItem from="1504375624324" duration="5681000" />
-      <workItem from="1504460573095" duration="5154000" />
+      <workItem from="1504460573095" duration="5286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15972000" />
+    <option name="totallyTimeSpent" value="16104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -262,26 +252,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/role.upgrader.js">
+    <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/role.harvester.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/role.builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="731">
+          <caret line="61" column="103" lean-forward="false" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
           <folding />
         </state>
       </provider>
@@ -294,10 +268,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
+    <entry file="file://$PROJECT_DIR$/role.builder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="61" column="103" lean-forward="false" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
+        <state relative-caret-position="255">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role.upgrader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role.harvester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding />
         </state>
       </provider>
