@@ -1,7 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 
-var maxHarversters = 3;
+var maxHarversters = 2;
 var maxUpgraders = 6;
 
 module.exports.loop = function () {
@@ -11,7 +11,6 @@ module.exports.loop = function () {
             delete Memory.creeps[name];
         }
     }
-
 
     // do some work
     var numHarvesters = 0;
