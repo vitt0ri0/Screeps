@@ -35,7 +35,7 @@ module.exports.loop = function () {
     }
     if (numUpgraders <= numHarvesters) {
         if (numUpgraders < maxUpgraders) {
-            Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE, MOVE], undefined, {role: 'upgrader'});
+            Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE, MOVE], undefined, {role: 'upgrader', upgrading: false});
         }
     }
 
