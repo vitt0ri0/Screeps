@@ -28,6 +28,9 @@ module.exports.loop = function () {
     }
 
     // spawn new creeps
+    console.log('numUpgraders ', numUpgraders);
+    console.log('numHarvesters ', numHarvesters);
+
     if (numHarvesters < numUpgraders) {
         if (numHarvesters < maxHarversters) {
             Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'harvester'});
