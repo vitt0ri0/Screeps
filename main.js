@@ -3,8 +3,10 @@ var roleUpgrader = require('role.upgrader');
 
 var maxHarversters = 2;
 var maxUpgraders = 6;
+var maxBuilders = 2;
 var createHarvester = false;
 var createUpgrader = false;
+var createBuilder = false;
 
 module.exports.loop = function () {
     //clear memory
@@ -17,6 +19,7 @@ module.exports.loop = function () {
     // do some work
     var numHarvesters = 0;
     var numUpgraders = 0;
+    var numBuilders = 0;
     for (var name in Game.creeps) {
         var creep = Game.creeps[name];
         if (creep.memory.role == 'harvester') {
@@ -26,6 +29,10 @@ module.exports.loop = function () {
         if (creep.memory.role == 'upgrader') {
             roleUpgrader.run(creep);
             numUpgraders += 1;
+        }
+        if (creep.memory.role == 'bulider') {
+            roleBuilder.run(creep);
+            numBuilders += 1;
         }
     }
 
@@ -41,6 +48,7 @@ module.exports.loop = function () {
         else if (numHarvesters < maxHarversters)
             createHarvester = true;
     }
+
     // spawn creep
     if (createHarvester) {
         Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'harvester', harvesting: false});
@@ -49,6 +57,9 @@ module.exports.loop = function () {
     if (createUpgrader) {
         Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE, MOVE], undefined, {role: 'upgrader', upgrading: false});
         createUpgrader = false;
+    }
+    if (numBuilders < maxBuilders) {
+        Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'builder', building: false});
     }
 
 
