@@ -1,7 +1,8 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 
-var maxWorkers = 5;
+var maxHarversters = 3;
+var maxUpgraders = 6;
 
 module.exports.loop = function () {
     //clear memory
@@ -29,11 +30,11 @@ module.exports.loop = function () {
 
     // spawn new creeps
     if (numHarvesters < numUpgraders) {
-        if (numHarvesters < maxWorkers) {
+        if (numHarvesters < maxHarversters) {
             Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'harvester'});
         }
     } else {
-        if (numUpgraders < maxWorkers) {
+        if (numUpgraders < maxUpgraders) {
             Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE, MOVE], undefined, {role: 'upgrader'});
         }
     }
