@@ -3,6 +3,8 @@ var roleUpgrader = require('role.upgrader');
 
 var maxHarversters = 2;
 var maxUpgraders = 6;
+var createHarvester = false;
+var createUpgrader = false;
 
 module.exports.loop = function () {
     //clear memory
