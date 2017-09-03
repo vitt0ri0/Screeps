@@ -1,7 +1,7 @@
 var roleUpgrader = {
 
         run: function (creep) {
-            if (creep.carry.energy < creep.carryCapacity) {
+            if (creep.carry.energy == 0) {
                 // if (creep.carry.energy == 0) {
                 //     creep.say('gonna harvest');
                 // }
