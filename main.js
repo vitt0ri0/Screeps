@@ -2,9 +2,9 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 
-var maxHarversters = 2;
-var maxUpgraders = 6;
-var maxBuilders = 2;
+var maxHarversters = 5;
+var maxUpgraders = 2;
+var maxBuilders = 5;
 var createHarvester = false;
 var createUpgrader = false;
 var createBuilder = false;
@@ -19,49 +19,80 @@ module.exports.loop = function () {
 
     // do some work
     var numHarvesters = 0;
-    var numUpgraders = 0;
     var numBuilders = 0;
+    var numUpgraders = 0;
+
+
+    // constructionObjectsAvailable
+    var constructionObjectsAvailable = false;
+    for (var item in Game.constructionSites) {
+        var constrObj = Game.constructionSites[item];
+        if (constrObj.progress < constrObj.progressTotal)
+            constructionObjectsAvailable = true;
+    }
+
+    // total energy storage
+    var energyStorageFull = (Game.spawns['Spawn1'].energy == Game.spawns['Spawn1'].energyCapacity);
+
     for (var name in Game.creeps) {
         var creep = Game.creeps[name];
+
         if (creep.memory.role == 'harvester') {
-            roleHarvester.run(creep);
             numHarvesters += 1;
+            if (!energyStorageFull) {
+                roleHarvester.run(creep);
+            }
+            else if (constructionObjectsAvailable) {
+                roleBuilder.run(creep);
+            } else {
+                roleUpgrader.run(creep);
+            }
+
         }
         if (creep.memory.role == 'upgrader') {
-            roleUpgrader.run(creep);
             numUpgraders += 1;
+            roleUpgrader.run(creep);
         }
         if (creep.memory.role == 'builder') {
-            roleBuilder.run(creep);
             numBuilders += 1;
+            if (constructionObjectsAvailable) {
+                roleBuilder.run(creep);
+            } else {
+                roleUpgrader.run(creep);
+            }
         }
     }
 
     // spawn new creeps
-    if (numHarvesters < numUpgraders) {
-        if (numHarvesters < maxHarversters)
-            createHarvester = true;
-        else if (numUpgraders < maxUpgraders)
-            createUpgrader = true;
-    } else {
-        if (numUpgraders < maxUpgraders)
-            createUpgrader = true;
-        else if (numHarvesters < maxHarversters)
-            createHarvester = true;
+    if (numHarvesters < maxHarversters) {
+        createHarvester = true;
+    } else if (numUpgraders < maxUpgraders) {
+        createUpgrader = true;
+    } else if (numBuilders < maxBuilders) {
+        createBuilder = true;
     }
 
     // spawn creep
     if (createHarvester) {
-        Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'harvester', harvesting: false});
+        Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, CARRY, MOVE], undefined,
+            {role: 'harvester', harvesting: false});
         createHarvester = false;
     }
     if (createUpgrader) {
-        Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE, MOVE], undefined, {role: 'upgrader', upgrading: false});
+        Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], undefined,
+            {role: 'upgrader', upgrading: false});
         createUpgrader = false;
     }
-    if (numBuilders < maxBuilders) {
-        Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'builder', building: false});
+    if (createBuilder) {
+        Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], undefined,
+            {role: 'builder', building: false});
+        createBuilder = false;
     }
+
+
+    // if (numBuilders < maxBuilders) {
+    //     Game.spawns.Spawn1.createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'builder', building: false});
+    // }
 
 
 // // var currentNumHarvesters = _.sum(Game.creeps, (c) = > c.memory.role == 'harvester');
